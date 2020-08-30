@@ -35,5 +35,33 @@ figure.foto-legenda figcaption {
 
 figure.foto-legenda:hover figcaption{
     opacity: 1;
-    transition: opacity .5s;
+    transition: opacity .7s;
+}
+
+nav#menu {
+    display: block;
+}
+
+nav#menu ul{
+    list-style: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: -20px;
+    left: 300px;
+}
+
+nav#menu li {
+    display: inline-block;
+    background-color: #dddddd;
+    padding: 10px;
+    margin: 2px;
+}
+
+nav#menu li:hover {
+    background-color: rgba(0, 0, 0, .4);
+    transition: background-color .7s;
+}
+
+nav#menu h1 {
+    display: none;
 }
