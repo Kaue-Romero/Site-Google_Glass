@@ -1,9 +1,8 @@
-@charset "UTF-8"
+@charset "UTF-8";
 
 section#conteudo {
-    width: 1000px;
+    width: 800px;
     margin: auto;
-
 }
 
 iframe#frame-spec {
@@ -12,6 +11,5 @@ iframe#frame-spec {
     display: block;
     float: right;
     border: none;
-    overflow: hidden;
 }
 
