@@ -35,6 +35,14 @@ a:hover {
     text-decoration: underline;
 }
 
+video#home {
+    width: 350px;
+}
+
+video#home2 {
+    width: 426px;
+}
+
 header#cabecalho img#icone {
     position: relative;
     left: 600px;
