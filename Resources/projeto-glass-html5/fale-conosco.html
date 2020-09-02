@@ -5,7 +5,7 @@
         <meta charset="UTF-8"/>
         <title>Tudo sobre Google Glass</title>
         <link rel="stylesheet" href="_css/estilo.css">
-        <link rel="stylesheet" href="_css/fotos.css">
+        <link rel="stylesheet" href="_css/form.css">
     </head>
     <script language="javascript" src="_javascript/funcoes.js"></script>
     <body>
@@ -20,11 +20,11 @@
                 <nav id="menu">
                     <h1>Menu Principal</h1>
                     <ul type="disk">
-                        <li  onmouseover="mudaIcone('_imagens/home.png')" onmouseout="mudaIcone('_imagens/fotos.png')"><a href="index.html">Home</a></li>
-                        <li  onmouseover="mudaIcone('_imagens/especificacoes.png')" onmouseout="mudaIcone('fotos.png')"><a href="specs.html">Especificações</a></li>
-                        <li  onmouseover="mudaIcone('_imagens/fotos.png')" onmouseout="mudaIcone('_imagens/fotos.png')"><a href="fotos.html">Fotos</a></li>
-                        <li onmouseover="mudaIcone('_imagens/multimidia.png')" onmouseout="mudaIcone('_imagens/fotos.png')"><a href="fotos.html"><a href="multimidia.html">Multimídia</a></li>
-                        <li onmouseover="mudaIcone('_imagens/contato.png')" onmouseout="mudaIcone('_imagens/fotos.png')"><a href="fotos.html"><a href="fale-conosco.html">Fale conosco</a></li>
+                        <li  onmouseover="mudaIcone('_imagens/home.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                        <li  onmouseover="mudaIcone('_imagens/especificacoes.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                        <li  onmouseover="mudaIcone('_imagens/Fotos.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                        <li onmouseover="mudaIcone('_imagens/multimidia.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="fotos.html"><a href="multimidia.html">Multimídia</a></li>
+                        <li onmouseover="mudaIcone('_imagens/contato.png')" onmouseout="mudaIcone('_imagens/contato.png')"><a href="fotos.html"><a href="fale-conosco.html">Fale conosco</a></li>
                     </ul>
                 </nav>
             </header>
@@ -38,7 +38,7 @@
                         <h3 class='data'>Atualizado em 01/Maio/2013</h3>
                         </hgroup>
                     </header>
-                    <form>
+                    <form method="POST" id="fContato" action="mailto:contato@cursoemvideo.com">
                         <fieldset id="usuario">
                         <legend>Identificação do Usuário</legend>
                             <p><label for="cNome">Nome: </label><input type="text" name="tNome" id="cNome" size="20" maxlength="40" placeholder="Nome completo"/></p>
@@ -54,20 +54,38 @@
                         <legend>Endereço do Usuário</legend>
                             <p><label for="cRua">Logradouro: </label><input type="text" name="tRua" id="cRua" size="20" maxlength="80" placeholder="Rua, Av, Cidade..."></p>
                             <p><label for="cNum">Número: </label><input type="number" name="tNum" id="cNum" min="0" max="9999"></p>
-                            <p>Estado:</p>
-                            <p>Cidade:</p>
+                            <p><label for="cEstado">Estado: </label><select name="tEstado" id="cEstado">
+                                <optgroup label="Região Sudeste">
+                                <option value="0">Rio de Janeiro</option>
+                                <option value="1" selected>São Paulo</option>
+                                <option value="2">Minas Gerais</option>
+                                </optgroup>
+                                <optgroup label="Região Sul">
+                                <option value="3">Paraná</option>
+                                <option value="4">Santa Catarina</option>
+                                <option value="5">Rio Grande do Sul</option>
+                                </optgroup>
+                            </select></p>
+                            <p><label for="cCidade">Cidade: </label><input type="text" name="tCidade" id="cCidade" maxlength="40" size="20" placeholder="Sua cidade" list="cidades">
+                                <datalist id="cidades">
+                                    <option>Rio de Janeiro</option>
+                                    <option>Nova Iguaçu</option>
+                                    <option>Niterói</option>
+                                    <option>Belford Roxo</option>
+                                </datalist>
+                            </p>
                         </fieldset>
                         <fieldset id="mensagem">
                         <legend>Mensagem do Usuário</legend>
-                            Grau de Urgência:
-                            Mensagem:
+                            <p><label for="cGrau">Grau de Urgência: Mín<input type="range" name="tGrau" id="cGrau" min="0" step="5" max="10">Max</label></p>
+                            <p><label for="cMens">Mensagem: <textarea name="tMens" id="cMens" cols="45" rows="5" placeholder="Deixe aqui sua mensagem" wrap="hard"></textarea></label></p>
                         </fieldset>
                         <fieldset id="pedido">
                         <legend>Quero um Google Glass</legend>
-                            Gostaria de adquirir um Google Glass quando disponível
-                            Cor:
-                            Quantidade:
-                            Preço Total: R$
+                            <legend>Gostaria de adquirir um Google Glass quando disponível</legend>
+                            <p><label for="cCor">Cor: </label><input type="text" name="tCor" id="cCor"></p>
+                            <p><label>Quantidade: <input type="number" min="1" max="10"></label></p>
+                            <p><label>Preço Total: R$ </label></p>
                         </fieldset>
                         [BOTÃO ENVIAR]
                     </form>
